@@ -1,5 +1,7 @@
 function binarySearch (sortedNumbers, index) {
-    return false;
+    if (sortedNumbers.length === 0) {
+        return -1;
+    }
 }
 
 module.exports = binarySearch;
