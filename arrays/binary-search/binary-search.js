@@ -9,6 +9,9 @@ function binarySearch (sortedNumbers, searchKey) {
         if(sortedNumbers[indexInTheMiddle] > searchKey) {
             return binarySearch(sortedNumbers.slice(0, indexInTheMiddle), searchKey);
         }
+        else {
+            return indexInTheMiddle + binarySearch(sortedNumbers.slice(indexInTheMiddle, sortedNumbers.length), searchKey);
+        }
     } else {
         return -1;
     }
