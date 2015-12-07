@@ -20,7 +20,13 @@ describe("binary-search", function () {
     it("should return 2 when looking for 30 in the array [10, 20, 30, 40, 50]", function () {
         expect(binarySearch([10, 20, 30, 40, 50], 30)).to.equal(2);
     });
+    it("should return 4 (last element) when looking for 50 in the array [10, 20, 30, 40, 50]", function () {
+        expect(binarySearch([10, 20, 30, 40, 50], 50)).to.equal(4);
+    });
     it("should return -1 when looking for 55 in the array [10, 20, 30, 40, 50]", function () {
         expect(binarySearch([10, 20, 30, 40, 50], 55)).to.equal(-1);
+    });
+    it("should return 5 when looking for 60 in the long array below", function () {
+        expect(binarySearch([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130], 60)).to.equal(5);
     });
 });
