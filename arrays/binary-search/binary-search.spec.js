@@ -21,6 +21,6 @@ describe("binary-search", function () {
         expect(binarySearch([10, 20, 30, 40, 50], 30)).to.equal(2);
     });
     it("should return -1 when looking for 55 in the array [10, 20, 30, 40, 50]", function () {
-        expect(binarySearch([10, 20, 30, 40, 50], 30)).to.equal(-1);
+        expect(binarySearch([10, 20, 30, 40, 50], 55)).to.equal(-1);
     });
 });
