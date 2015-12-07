@@ -10,7 +10,11 @@ function binarySearch (sortedNumbers, searchKey) {
             return binarySearch(sortedNumbers.slice(0, indexInTheMiddle), searchKey);
         }
         else {
-            return indexInTheMiddle + binarySearch(sortedNumbers.slice(indexInTheMiddle, sortedNumbers.length), searchKey);
+            var returnedIndex = binarySearch(sortedNumbers.slice(indexInTheMiddle, sortedNumbers.length), searchKey);
+            if (returnedIndex !== -1)
+                return indexInTheMiddle + returnedIndex;
+            else
+                return -1;
         }
     } else {
         return -1;
