@@ -1,5 +1,21 @@
 var NOT_FOUND = -1;
 
+function _isArrayEmpty(sortedNumbers) {
+    return sortedNumbers.length === 0;
+}
+
+function _isTheLastElementAndMatches(sortedNumbers, searchKey) {
+    return sortedNumbers.length === 1 && sortedNumbers[0] === searchKey;
+}
+
+function _isTheLastElementAndDoesNotMatch(sortedNumbers, searchKey) {
+    return sortedNumbers.length === 1 && sortedNumbers[0] !== searchKey;
+}
+
+function _isNotTheLastElement(sortedNumbers, searchKey) {
+    return sortedNumbers.length > 1;
+}
+
 function _isSearchKeyInTheLeftHalf(sortedNumbers, searchKey, indexInTheMiddle) {
     return sortedNumbers[indexInTheMiddle] > searchKey;
 }
@@ -17,12 +33,14 @@ function _rightHalfProcessing(sortedNumbers, searchKey, indexInTheMiddle) {
 }
 
 function binarySearch (sortedNumbers, searchKey) {
-    if (sortedNumbers.length === 0) {
+    if (_isArrayEmpty(sortedNumbers)) {
         return NOT_FOUND;
     }
-    if (sortedNumbers.length === 1 && sortedNumbers[0] === searchKey) {
+    if (_isTheLastElementAndMatches(sortedNumbers, searchKey)) {
         return 0;
-    } else if(sortedNumbers.length !== 1) {
+    } else if (_isTheLastElementAndDoesNotMatch(sortedNumbers, searchKey)) {
+        return NOT_FOUND;
+    } else if (_isNotTheLastElement(sortedNumbers, searchKey)){
         var indexInTheMiddle = parseInt(sortedNumbers.length / 2);
         if(_isSearchKeyInTheLeftHalf(sortedNumbers, searchKey, indexInTheMiddle)) {
             return _leftHalfProcessing(sortedNumbers, searchKey, indexInTheMiddle);
@@ -30,8 +48,6 @@ function binarySearch (sortedNumbers, searchKey) {
         else {
             return _rightHalfProcessing(sortedNumbers, searchKey, indexInTheMiddle);
         }
-    } else {
-        return NOT_FOUND;
     }
 }
 
