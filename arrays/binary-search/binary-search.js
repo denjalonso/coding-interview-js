@@ -1,6 +1,7 @@
+var NOT_FOUND = -1;
 function binarySearch (sortedNumbers, searchKey) {
     if (sortedNumbers.length === 0) {
-        return -1;
+        return NOT_FOUND;
     }
     if (sortedNumbers.length === 1 && sortedNumbers[0] === searchKey) {
         return 0;
@@ -11,13 +12,13 @@ function binarySearch (sortedNumbers, searchKey) {
         }
         else {
             var returnedIndex = binarySearch(sortedNumbers.slice(indexInTheMiddle, sortedNumbers.length), searchKey);
-            if (returnedIndex !== -1)
+            if (returnedIndex !== NOT_FOUND)
                 return indexInTheMiddle + returnedIndex;
             else
-                return -1;
+                return NOT_FOUND;
         }
     } else {
-        return -1;
+        return NOT_FOUND;
     }
 }
 
