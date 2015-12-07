@@ -11,4 +11,7 @@ describe("binary-search", function () {
     it("should return -1 if the array length is 1 and the search key doesn't match", function () {
         expect(binarySearch([2], 1)).to.equal(-1);
     });
+    it("should return 2 when looking for 30 in the array [10, 20, 30, 40]", function () {
+        expect(binarySearch([10, 20, 30, 40], 30)).to.equal(2);
+    });
 });
