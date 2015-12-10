@@ -12,8 +12,16 @@ function CustomList(listToCreate) {
 }
 
 CustomList.prototype.append = function(value) {
+    var newNode = new CustomListNode(value);
     if (this.head === null) {
-        this.head = new CustomListNode(value);
+        this.head = newNode;
+    }
+    else {
+        var lastNode = this.head;
+        while (lastNode.next !== null) {
+            lastNode = lastNode.next;
+        }
+        lastNode.next = newNode;
     }
 };
 
