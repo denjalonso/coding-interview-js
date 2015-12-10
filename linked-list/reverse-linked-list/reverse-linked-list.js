@@ -25,8 +25,21 @@ CustomList.prototype.append = function(value) {
     }
 };
 
+CustomList.prototype.length = function() {
+    var count = 0;
+    if (this.head !== null) {
+        count++;
+        var lastNode = this.head;
+        while (lastNode.next !== null) {
+            lastNode = lastNode.next;
+            count++;
+        }
+    }
+    return count;
+};
+
 CustomList.prototype._initialize = function(listToCreate) {
-    for (i=0; i<listToCreate.length; i++) {
+    for (var i=0; i<listToCreate.length; i++) {
         this.append(listToCreate[i]);
     }
 };
