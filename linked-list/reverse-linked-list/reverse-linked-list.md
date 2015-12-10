@@ -23,3 +23,7 @@ Given the pointer/reference to the head of a singly linked list, resverse it and
 * How would you do it iteratively in a single pass?
 * How would you do it recursively in a single pass?
 
+### Solutions
+
+#### Iterative
+Iterative solution committed by @romenrg on 10th of December, 2015. This iterative solution (with its tests) took him 1 hour 40 minutes to complete.
