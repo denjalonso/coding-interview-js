@@ -14,6 +14,13 @@ describe("List class -", function() {
             expect(customList.head.next.value).to.equal(10);
             expect(customList.head.next.next).to.be.null;
         });
+        it("Should create a custom list with three elements", function() {
+            var customList = new CustomList([5, 10, 15]);
+            expect(customList.head.value).to.equal(5);
+            expect(customList.head.next.value).to.equal(10);
+            expect(customList.head.next.next.value).to.equal(15);
+            expect(customList.head.next.next.next).to.be.null;
+        });
         it("Should have the expected length", function() {
             var customList = new CustomList([5,10,15,20]);
             expect(customList.length()).to.equal(4);
