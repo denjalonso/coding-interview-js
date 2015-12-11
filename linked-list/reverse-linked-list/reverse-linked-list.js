@@ -8,7 +8,7 @@ function CustomListNode(value) {
 /* --- CUSTOM LIST CLASS ---*/
 function CustomList(listToCreate) {
     this.head = null;
-    this.initialize = this._initialize(listToCreate);
+    this._initialize(listToCreate);
 }
 
 CustomList.prototype.revert = function() {
